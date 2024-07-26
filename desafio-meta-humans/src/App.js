@@ -1,24 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Listagem from './pages/meta-humans/listagem';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Customize your primary color
+    },
+    secondary: {
+      main: '#dc004e', // Customize your secondary color
+    },
+  },
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif', // Customize your fonts
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Listagem />
+    </ThemeProvider>
   );
 }
 
